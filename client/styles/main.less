@@ -1,6 +1,10 @@
 @import "mixins.import.less";
 @import "variables.import.less";
 
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
 .masthead {
   background: linear-gradient(to top, @masthead-bg, lighten(@masthead-bg, 10%));
   color: @masthead-color;
@@ -71,4 +75,18 @@
   @media screen and (max-width: @screen-xs-max) {
     font-size: 1.4em;
   }
+}
+
+.reviews {
+  margin-top: 2em;
+}
+
+.reviewer-name {
+  font-size: 2em;
+  font-weight: 100;
+}
+
+.reviewer-text {
+  font-size: 1.2em;
+  margin-bottom: 2em;
 }

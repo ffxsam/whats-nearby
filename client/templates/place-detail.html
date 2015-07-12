@@ -3,7 +3,30 @@
     {{> spinner}}
   {{else}}
     {{#with placeDetail}}
-      {{rating}}
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>{{name}}</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          {{formatted_address}}
+        </div>
+      </div>
+
+      <div class="reviews">
+        {{#each reviews}}
+          <div class="row">
+            <div class="col-sm-4 reviewer-name">
+              {{author_name}}
+            </div>
+            <div class="col-sm-8 reviewer-text">
+              "{{text}}"
+            </div>
+          </div>
+        {{/each}}
+      </div>
     {{/with}}
   {{/if}}
 </template>

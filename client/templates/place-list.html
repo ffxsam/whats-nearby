@@ -3,10 +3,11 @@
     <div class="locating">
       <i class="fa fa-globe fa-3x"></i>
     </div>
+  {{else}}
+    {{#each places}}
+      <p>
+        <img src="{{icon}}"><a href="{{pathFor 'placeDetail'}}">{{name}}</a>
+      </p>
+    {{/each}}
   {{/if}}
-  {{#each places}}
-    <p>
-      <a href="{{pathFor 'placeDetail'}}">{{name}}</a>
-    </p>
-  {{/each}}
 </template>

@@ -1,0 +1,12 @@
+<template name="placeList">
+  {{#if isTrue 'loadingPlaces'}}
+    <div class="locating">
+      <i class="fa fa-globe fa-3x"></i>
+    </div>
+  {{/if}}
+  {{#each places}}
+    <p>
+      <a href="{{pathFor 'placeDetail'}}">{{name}}</a>
+    </p>
+  {{/each}}
+</template>

@@ -1,4 +1,4 @@
-Template.homePage.onCreated(function () {
+Template.placeList.onCreated(function () {
   var template = this;
 
   // reactive vars
@@ -8,8 +8,10 @@ Template.homePage.onCreated(function () {
   template.radius = new ReactiveVar(); // 1 mile default
 
   template.autorun(function (c) {
-    // This block of code is run every time any reactive object within changes
-    // (hint: the Gelocation object is reactive)
+    /*
+     * This block of code is run every time any reactive object within changes.
+     * (hint: the Geolocation object is reactive)
+     */
     var latLng = Geolocation.latLng();
 
     if (latLng) { // we have a valid geoloc
@@ -21,6 +23,10 @@ Template.homePage.onCreated(function () {
   });
 
   template.autorun(function () {
+    /*
+     * Another auto-run block. Only call the getPlaces method once we have a
+     * valid geolocation. Then getPlaces will fetch nearby stuff.
+     */
     if (!template.location.get()) {
       return;
     }
@@ -30,12 +36,16 @@ Template.homePage.onCreated(function () {
         if (!error) {
           template.places.set(result);
           template.loadingPlaces.set(false);
+          console.log(result);
+          _.each(result, function (place) {
+            Places.insert(place);
+          });
         }
       });
   });
 });
 
-Template.homePage.helpers({
+Template.placeList.helpers({
   places: function () {
     return Template.instance().places.get();
   },

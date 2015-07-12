@@ -20,5 +20,27 @@ Meteor.methods({
     } catch (e) {
       // TODO: handle errors
     }
+  },
+
+  getPlaceDetail: function (placeId) {
+    var reqURL = 'https://maps.googleapis.com/maps/api/place/details/json';
+    var result;
+
+    try {
+      result = HTTP.call('GET', reqURL, {
+        params: {
+          key: Meteor.settings.apiKey,
+          placeid: placeId
+        }
+      });
+
+      if (result.data.status === 'OK') {
+        return result.data.result;
+      } else {
+        console.log(result.data.status);
+      }
+    } catch (e) {
+      // TODO: handle errors
+    }
   }
 });

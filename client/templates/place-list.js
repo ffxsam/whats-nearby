@@ -6,9 +6,5 @@ Template.placeList.onCreated(function () {
 Template.placeList.helpers({
   places: function () {
     return Places.find();
-  },
-
-  isTrue: function (varName) {
-    return !!Session.get(varName);
   }
 });

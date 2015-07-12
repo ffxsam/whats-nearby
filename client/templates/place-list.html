@@ -1,13 +1,20 @@
 <template name="placeList">
   {{#if isTrue 'loadingPlaces'}}
-    <div class="locating">
-      <i class="fa fa-globe fa-3x"></i>
+    <div class="locating-container">
+      <div class="locating">
+        <i class="fa fa-globe fa-3x"></i>
+      </div>
     </div>
   {{else}}
-    {{#each places}}
-      <p>
-        <img src="{{icon}}"><a href="{{pathFor 'placeDetail'}}">{{name}}</a>
-      </p>
-    {{/each}}
+    <ul class="place-list">
+      {{#each places}}
+        <li>
+          <a href="{{pathFor 'placeDetail'}}">
+            <img class="place-icon hidden-xs hidden-sm" src="{{icon}}">
+            <span class="place-name">{{name}}</span>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
   {{/if}}
 </template>

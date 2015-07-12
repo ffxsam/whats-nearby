@@ -13,3 +13,4 @@ reactive-var
 mdg:geolocation
 http
 fortawesome:fontawesome
+sacha:spin

@@ -1,8 +1,11 @@
 @import "mixins.import.less";
+@import "variables.import.less";
 
 .masthead {
-  background: #aaa;
-  font-family: 'Comfortaa', Arial, sans-serif;
+  background: linear-gradient(to top, @masthead-bg, lighten(@masthead-bg, 10%));
+  color: @masthead-color;
+  font-family: 'Oxygen', Arial, sans-serif;
+  font-weight: bold;
   margin-bottom: 2em;
   padding: 2em;
 
@@ -11,7 +14,21 @@
   }
 }
 
+.locating-container {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 .locating {
+  font-size: 3em;
+  position: relative;
+  top: 50%;
+
   .animation(pulsate, 500ms, infinite, ease-out);
 }
 
@@ -23,3 +40,35 @@
     opacity: 0.0;
   }
 });
+
+.place-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-bottom: 1em;
+
+    @media screen and (max-width: @screen-xs-max) {
+      margin-bottom: 1.4em;
+    }
+  }
+}
+
+.place-icon {
+  margin-right: 2em;
+  text-align: middle;
+}
+
+.place-name {
+  font-family: Oxygen, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: lighter;
+
+  @media screen and (max-width: @screen-xs-max) {
+    font-size: 1.4em;
+  }
+}

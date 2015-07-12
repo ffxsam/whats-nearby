@@ -1,0 +1,13 @@
+.animation (@name, @duration, @count, @timingFunc) {
+  -webkit-animation: @name @duration @timingFunc @count alternate;
+  animation: @name @duration @timingFunc @count alternate;
+}
+
+.keyframes (@name; @arguments) {
+  @-webkit-keyframes @name {
+    @arguments();
+  }
+  @keyframes @name {
+    @arguments();
+  }
+}

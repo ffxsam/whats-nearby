@@ -2,7 +2,7 @@ Meteor.methods({
   getPlaces: function (latLng, radius) {
     var reqURL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
     var result;
-    debugger;
+
     try {
       result = HTTP.call('GET', reqURL, {
         params: {

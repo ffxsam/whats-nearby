@@ -1,0 +1,25 @@
+@import "mixins.import.less";
+
+.masthead {
+  background: #aaa;
+  font-family: 'Comfortaa', Arial, sans-serif;
+  margin-bottom: 2em;
+  padding: 2em;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.locating {
+  .animation(pulsate, 500ms, infinite, ease-out);
+}
+
+.keyframes(pulsate; {
+  0% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+  }
+});

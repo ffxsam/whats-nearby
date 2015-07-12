@@ -6,7 +6,6 @@ Template.placeDetail.onCreated(function () {
     Session.set('detail/loading', false);
 
     if (!error) {
-      console.log(result);
       Session.set('detail/place', result);
     }
   });

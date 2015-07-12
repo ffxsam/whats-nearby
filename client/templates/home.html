@@ -1,0 +1,14 @@
+<template name="homePage">
+  <div class="masthead">
+    <h1>Header</h1>
+  </div>
+
+  <div class="container">
+    {{#if isTrue 'loadingPlaces'}}
+      Loading...
+    {{/if}}
+    {{#each places}}
+      <p>{{name}}</p>
+    {{/each}}
+  </div>
+</template>
